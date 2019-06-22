@@ -21,6 +21,27 @@ const Postagem = sequelize.define('postagens',{
 })
 //model que cria uma tabela
  
-Postagem.sync({force:true})
+//Postagem.sync({force:true})
 
 //sync vai sincronizar o model com o bd
+
+Postagem.create({
+    titulo: "Programação",
+    conteudo: "Programando em Node.js com Squelize"
+})
+
+const Comentarios = sequelize.define('comentarios',{
+    nome:{
+        type: Squelize.STRING
+    },
+    cometario:{
+        type:Squelize.TEXT
+    },
+    email:{
+        type:Squelize.TEXT
+    } 
+})
+
+//Comentarios.sync({force:true})
+//Comentar se não ele fica recriando a tabela.
+
