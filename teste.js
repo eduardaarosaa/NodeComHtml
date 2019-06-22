@@ -11,5 +11,16 @@ sequelize.authenticate().then(function(){
 });
 //Authenticate - essa função verifica se o bd conectou;
 
-
+const Postagem = sequelize.define('postagens',{
+    titulo:{
+        type:Squelize.STRING
+    },
+    conteudo:{
+        type: Squelize.TEXT
+    }
+})
+//model que cria uma tabela
  
+Postagem.sync({force:true})
+
+//sync vai sincronizar o model com o bd
